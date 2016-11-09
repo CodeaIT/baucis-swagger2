@@ -257,7 +257,7 @@ module.exports = function() {
             }
         }
         else if (path.schema) {
-            var schemaName = path.schema.swaggerName? path.schema.swaggerName: '#/definitions/'+ definitionName + utils.capitalize(name);
+            var schemaName = path.schema.swaggerName? path.schema.swaggerName: definitionName + utils.capitalize(name);
 
             if (existingDefinitions.indexOf(schemaName) === -1){
                 existingDefinitions.push(schemaName);
