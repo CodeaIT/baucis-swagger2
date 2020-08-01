@@ -174,6 +174,7 @@ module.exports = function() {
     if (type === String ||
         type === Date ||
         type === mongoose.Schema.Types.ObjectId ||
+        type === 'ObjectId' || 
         type === mongoose.Schema.Types.Oid) {
       return 'string';
     }
