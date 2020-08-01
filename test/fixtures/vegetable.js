@@ -35,9 +35,12 @@ var ChargeArea = new Schema({
   orders: { type: [Number], required: false },
   clusters: [ { type: Schema.Types.ObjectId, ref: 'ChargeCluster' } ]
 });
+ChargeArea.swaggerName = 'ChargeArea';
+
 var ChargeCluster = new Schema({
   name: { type: String, required: true }
 });
+ChargeCluster.swaggerName = 'ChargeCluster';
 
 mongoose.model('vegetable', Vegetable);
 mongoose.model('fungus', Fungus).plural('fungi');
@@ -74,8 +77,8 @@ var fixture = module.exports = {
     
     baucis.rest('fungus').select('-hyphenated-field-name -password');
     baucis.rest('goose');
-	baucis.rest('chargeArea');
-	baucis.rest('chargeCluster');
+	  baucis.rest('chargeArea');
+	  baucis.rest('chargeCluster');
 	
     app = express();
 
